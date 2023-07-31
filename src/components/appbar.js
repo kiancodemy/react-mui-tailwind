@@ -79,7 +79,7 @@ export default function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="black"
             >
               <MenuIcon />
             </IconButton>
@@ -104,16 +104,18 @@ export default function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem
-                  className="rounded-3px h-[32px]"
+                  className=" rounded-3px h-[32px]"
                   key={page}
                   onClick={handleCloseNavMenu}
                 >
-                  <Button textAlign="center">{page}</Button>
+                  <Button className="text-[black]" textAlign="center">
+                    {page}
+                  </Button>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+
           <Typography
             variant="h5"
             noWrap
