@@ -29,19 +29,11 @@ export default function SignIn() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container
-        className="max-w-[428px] max-h-[370px] pr-[16px] pb-[10px] rounded-[5px]"
+        className="   max-w-[428px] max-h-[370px] pr-[16px] pb-[10px] rounded-[5px]"
         component="main"
-        maxWidth="xs"
       >
         <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+        <Box>
           <Box
             className="  max-w-[412px] max-h-[260px] pb-[15px]"
             component="form"
