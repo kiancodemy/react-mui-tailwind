@@ -11,20 +11,19 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { useContext } from "react";
+import { Manage } from "./context/context";
 
 import { useState } from "react";
 import Up from "./svgg/up";
 import Down from "./svgg/down";
 
-import { Manage } from "./context/context";
-import { useContext } from "react";
-
 export default function ResponsiveAppBshar() {
-  const { lang, setlang } = useContext(Manage);
+  const { lang, dark, setdark, setlang } = useContext(Manage);
   const settings = lang ? ["English", "Farsi"] : ["انگلیسی", "فارسی"];
   const pages = lang
     ? ["Blog", "Aboutus", "Pricing", "Products"]
-    : ["بلاگ", "درباره ما", "قیمت ها", "محصولات"];
+    : ["بلاگ", " درباره", " قیمت ", "محصولات"];
 
   const [direction, setdirection] = useState(false);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -73,14 +72,19 @@ export default function ResponsiveAppBshar() {
   };
 
   return (
-    <AppBar position="static" className="bg-[#FFFFFF]">
+    <AppBar
+      position="static"
+      className={`${dark ? "bg-[#FFFFFF]" : "bg-[#1C2329]"}`}
+    >
       <Container maxWidth="xl ">
         <Toolbar disableGutters className="max-w-[1860px] max-h-[37px] ">
           <div className="w-[1438px] max-h-[37px]">
             <div className="w-[166px] max-h-[37px]">
               <div className="max-w-[138px] h-[37px] flex justify-start items-center ">
                 <Typography
-                  className="max-w[125px] leading-[20px] tracking-[-0.5px] h-[30px] text-[18px] text-[#393F49]"
+                  className={`${
+                    dark ? "text-[#393F49" : "text-[#EAECEF]"
+                  }"max-w[125px] leading-[20px] tracking-[-0.5px] h-[30px] text-[18px]"`}
                   variant="h6"
                   noWrap
                   component="a"
@@ -101,7 +105,10 @@ export default function ResponsiveAppBshar() {
             </div>
           </div>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            className="bg-[white] mr-[20px] "
+            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -133,11 +140,20 @@ export default function ResponsiveAppBshar() {
             >
               {pages.map((page) => (
                 <MenuItem
-                  className=" rounded-3px h-[32px]"
+                  className={`${
+                    dark ? "bg-[white] " : "bg-[#1C2329]"
+                  } " rounded-3px h-[32px] "`}
                   key={page}
                   onClick={handleCloseNavMenu}
                 >
-                  <Button className="text-[black]" textAlign="center">
+                  <Button
+                    className={`${
+                      dark
+                        ? "text-[black] font-iran"
+                        : "text-[#EAECEF] font-iran"
+                    } `}
+                    textAlign="center"
+                  >
                     {page}
                   </Button>
                 </MenuItem>
@@ -145,31 +161,15 @@ export default function ResponsiveAppBshar() {
             </Menu>
           </Box>
 
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
           <Box
             className="mr-[15px]"
             sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
           >
             {pages.map((page) => (
               <Button
-                className="font-iran "
+                className={`${
+                  dark ? "text-[black] font-iran " : "text-[#EAECEF] font-iran"
+                }`}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "black", display: "block" }}
@@ -179,14 +179,21 @@ export default function ResponsiveAppBshar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box
+            className={`${dark ? "text-black" : "text-[#EAECEF]"}`}
+            sx={{ flexGrow: 0 }}
+          >
             {lang ? (
-              <span className="text-black font-iran">En</span>
+              <span className=" font-iran">En</span>
             ) : (
-              <span className="text-black font-iran">زبان</span>
+              <span className=" font-iran">زبان</span>
             )}
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton
+                className={`${dark ? "text-black" : "text-[#EAECEF]"}`}
+                onClick={handleOpenUserMenu}
+                sx={{ p: 0 }}
+              >
                 {direction ? <Down></Down> : <Up></Up>}
               </IconButton>
             </Tooltip>

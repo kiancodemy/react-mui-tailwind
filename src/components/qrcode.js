@@ -18,7 +18,13 @@ export default function Qr() {
           src={dark ? svg : svg2}
         ></Image>
       </div>
-      <p className="w-[127px] h-[23px] text-[14px] font-[500] leading-[23px] tracking-[0.1px] text-center text-[#1E2329]">
+      <p
+        className={`${
+          dark
+            ? "w-[127px] h-[23px] text-[14px] font-[500] leading-[23px] tracking-[0.1px] text-center text-[#1E2329]"
+            : "text-[#EAECEF] w-[127px] h-[23px] text-[14px] font-[500] leading-[23px] tracking-[0.1px] text-center text-[#1E2329]"
+        }`}
+      >
         {lang ? (
           <span>Log in with QR code</span>
         ) : (

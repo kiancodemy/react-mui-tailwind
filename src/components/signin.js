@@ -22,7 +22,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const { lang, setlang } = useContext(Manage);
+  const { dark, lang, setlang } = useContext(Manage);
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -114,15 +114,19 @@ export default function SignIn() {
           </Box>
           <div>
             <Button
-              className="font-roboto text-[14px] font-[500] text-center tracking-[0.1px] bg-[#CEE6F3] hover:bg-[#9fd1ec] leading-[23px] text-[black] max-w-[480px] max-h-[40px]"
+              className={`${
+                dark
+                  ? "font-roboto text-[14px] font-[500] text-center tracking-[0.1px] bg-[#CEE6F3] hover:bg-[#9fd1ec] leading-[23px] text-[black] max-w-[480px] max-h-[40px]"
+                  : "font-roboto text-[14px] font-[500] text-center tracking-[0.1px] bg-[#1E2329]  leading-[23px] text-[#96999C] max-w-[480px] max-h-[40px]"
+              } `}
               type="submit"
               fullWidth
               sx={{ mt: 3, mb: 2 }}
             >
               <Image
-                className="w-[25px] h-[25px]rounded-[5px] mr-[10px]"
+                className="brightness-[1.7] w-[25px] h-[25px]rounded-[5px] mr-[10px]"
                 src={google}
-              ></Image>{" "}
+              ></Image>
               <p>
                 {lang ? (
                   <span>Login with Google</span>
