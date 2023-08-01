@@ -5,7 +5,7 @@ export const Manage = createContext();
 
 export default function Provider({ children }) {
   const [lang, setlang] = useState(true);
-  const [dark, setdark] = useState(false);
+  const [dark, setdark] = useState(1);
 
   const value = { lang, setlang, dark, setdark };
 

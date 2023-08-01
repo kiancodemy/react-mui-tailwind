@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     fontFamily: {
       roboto: ["Roboto", "sans-serif"],
-      iran: ["Iranian Sans", "sans-serif"],
+      iran: ["Iranian Sans", "Roboto"],
     },
     extend: {},
   },

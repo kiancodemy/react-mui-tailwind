@@ -19,10 +19,9 @@ import Down from "./svgg/down";
 import { Manage } from "./context/context";
 import { useContext } from "react";
 
-const settings = ["English", "Farsi"];
-
-export default function ResponsiveAppBar() {
+export default function ResponsiveAppBshar() {
   const { lang, setlang } = useContext(Manage);
+  const settings = lang ? ["English", "Farsi"] : ["انگلیسی", "فارسی"];
   const pages = lang
     ? ["Blog", "Aboutus", "Pricing", "Products"]
     : ["بلاگ", "درباره ما", "قیمت ها", "محصولات"];
@@ -35,15 +34,39 @@ export default function ResponsiveAppBar() {
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
+    event.preventDefault();
     setdirection(!direction);
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (e) => {
+    e.preventDefault();
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
+  const handleCloseUserMenu = (e) => {
+    e.preventDefault();
+
+    setlang(!lang);
+
+    setdirection(!direction);
+
+    setAnchorElUser(null);
+  };
+  const handleCloseUserMenu1 = (e) => {
+    e.preventDefault();
+
+    setlang(true);
+
+    setdirection(!direction);
+
+    setAnchorElUser(null);
+  };
+  const handleCloseUserMenu2 = (e) => {
+    e.preventDefault();
+
+    setlang(false);
+
     setdirection(!direction);
 
     setAnchorElUser(null);
@@ -140,9 +163,13 @@ export default function ResponsiveAppBar() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            className="mr-[15px]"
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+          >
             {pages.map((page) => (
               <Button
+                className="font-iran "
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "black", display: "block" }}
@@ -153,11 +180,17 @@ export default function ResponsiveAppBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
+            {lang ? (
+              <span className="text-black font-iran">En</span>
+            ) : (
+              <span className="text-black font-iran">زبان</span>
+            )}
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 {direction ? <Down></Down> : <Up></Up>}
               </IconButton>
             </Tooltip>
+
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
@@ -174,11 +207,17 @@ export default function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem key={settings[0]} onClick={handleCloseUserMenu1}>
+                <Typography className="font-iran" textAlign="center">
+                  {settings[0]}
+                </Typography>
+              </MenuItem>
+
+              <MenuItem key={settings[1]} onClick={handleCloseUserMenu2}>
+                <Typography className="font-iran" textAlign="center">
+                  {settings[1]}
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
         </Toolbar>

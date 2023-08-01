@@ -56,8 +56,8 @@ export default function SignIn() {
                 lang ? (
                   <span>Email Address or Username</span>
                 ) : (
-                  <span className="text-iran text-right">
-                    لظفا ایمیمل خود را وارد کنید
+                  <span className="font-iran text-right">
+                    لطفا ایمیل خود را وارد کنید
                   </span>
                 )
               }
@@ -106,7 +106,7 @@ export default function SignIn() {
                   <span>Forgot password?</span>
                 ) : (
                   <span className="block font-iran text-right ">
-                    پسورد را فراموش کردید
+                    ? پسورد را فراموش کردید
                   </span>
                 )}
               </Link>
@@ -142,7 +142,9 @@ export default function SignIn() {
                   Don't have an account?
                 </span>
               ) : (
-                <span className="block text-right">حساب از قبل ندارید؟</span>
+                <span className="block font-iran text-right">
+                  حساب از قبل ندارید؟
+                </span>
               )}
 
               <span className="max-w-[43px] h-[20px] font-roboto text-roboto leading-[19.42px] tracking-[0.4px] text-center font-[400] text-[#181A20] text-[14px]">
