@@ -35,28 +35,46 @@ export default function SignIn() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container
-        className="   max-w-[428px] max-h-[370px] pr-[16px] pb-[10px] rounded-[5px]"
+        className={`${
+          dark
+            ? " max-w-[428px] max-h-[370px] pr-[16px] pb-[10px] rounded-[5px]"
+            : " max-w-[428px] max-h-[370px] pr-[16px] pb-[10px] rounded-[5px] bg-[#2B3139]"
+        }`}
         component="main"
       >
         <CssBaseline />
         <Box>
           <Box
-            className="  max-w-[412px] max-h-[260px] pb-[15px]"
+            className=" max-w-[412px] max-h-[260px] pb-[15px]"
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ mt: 1 }}
+            sx={{ mt: 1, borderColor: "red" }}
           >
             <TextField
+              className={" h-[80px] border-[3px] max-w-[420px] max-h-[43px] "}
               margin="normal"
+              color="primary"
               required
               fullWidth
               id="email"
               label={
                 lang ? (
-                  <span>Email Address or Username</span>
+                  <span
+                    className={`${
+                      dark ? "text-[#BAC0C6]  " : "text-[#848E9C]  "
+                    }`}
+                  >
+                    Email Address or Username
+                  </span>
                 ) : (
-                  <span className="font-iran text-right">
+                  <span
+                    className={`${
+                      dark
+                        ? "text-[#BAC0C6] font-iran text-right  "
+                        : "text-[#848E9C] font-iran text-right "
+                    }`}
+                  >
                     لطفا ایمیل خود را وارد کنید
                   </span>
                 )
@@ -64,7 +82,6 @@ export default function SignIn() {
               name="email"
               autoComplete="email"
               autoFocus
-              className="border-[#eceff1] max-w-[420px] max-h-[43px] "
             />
             <TextField
               margin="normal"
@@ -73,9 +90,21 @@ export default function SignIn() {
               name="password"
               label={
                 lang ? (
-                  <span>Password</span>
+                  <span
+                    className={`${dark ? "text-[#BAC0C6]" : "text-[#848E9C]"}`}
+                  >
+                    Password
+                  </span>
                 ) : (
-                  <p className="font-iran text-right">پسورد را وارد کنید</p>
+                  <p
+                    className={`${
+                      dark
+                        ? "text-[#BAC0C6] font-iran text-right"
+                        : "text-[#848E9C] font-iran text-right"
+                    }`}
+                  >
+                    پسورد را وارد کنید
+                  </p>
                 )
               }
               type="password"
@@ -103,9 +132,19 @@ export default function SignIn() {
                 variant="body2"
               >
                 {lang ? (
-                  <span>Forgot password?</span>
+                  <span
+                    className={`${dark ? "text-[black]" : "text-[#B7BDC6]"}`}
+                  >
+                    Forgot password?
+                  </span>
                 ) : (
-                  <span className="block font-iran text-right ">
+                  <span
+                    className={`${
+                      dark
+                        ? "block text-[black] font-iran text-right"
+                        : "block font-iran text-[#EAECEF] text-right"
+                    }`}
+                  >
                     ? پسورد را فراموش کردید
                   </span>
                 )}
@@ -129,9 +168,25 @@ export default function SignIn() {
               ></Image>
               <p>
                 {lang ? (
-                  <span>Login with Google</span>
+                  <span
+                    className={`${
+                      dark
+                        ? "text-[black] capitalize"
+                        : "text-[#F5F5F5] capitalize"
+                    }`}
+                  >
+                    Log in with Google
+                  </span>
                 ) : (
-                  <span className="font-iran ">ورود با گوگل</span>
+                  <span
+                    className={`${
+                      dark
+                        ? "text-[black]  font-iran"
+                        : "text-[#F5F5F5]  font-iran"
+                    }`}
+                  >
+                    ورود با گوگل
+                  </span>
                 )}
               </p>
             </Button>
@@ -142,16 +197,34 @@ export default function SignIn() {
               variant="body2"
             >
               {lang ? (
-                <span className=" max-w-[132px] h-[20px] font-roboto text-roboto leading-[19px] tracking-[0.4px] text-center font-[400]">
+                <span
+                  className={`${
+                    dark
+                      ? "max-w-[132px] h-[20px] font-roboto text-roboto leading-[19px] tracking-[0.4px] text-center font-[400]"
+                      : " max-w-[132px] h-[20px] font-roboto text-roboto leading-[19px] tracking-[0.4px] text-center font-[400] text-[#B7BDC6]"
+                  }`}
+                >
                   Don't have an account?
                 </span>
               ) : (
-                <span className="block font-iran text-right">
+                <span
+                  className={`${
+                    dark
+                      ? "block font-iran text-right"
+                      : "block font-iran text-right text-[#B7BDC6]"
+                  }`}
+                >
                   حساب از قبل ندارید؟
                 </span>
               )}
 
-              <span className="max-w-[43px] h-[20px] font-roboto text-roboto leading-[19.42px] tracking-[0.4px] text-center font-[400] text-[#181A20] text-[14px]">
+              <span
+                className={`${
+                  dark
+                    ? " ml-[3px] max-w-[43px] h-[20px] font-roboto text-roboto leading-[19.42px] tracking-[0.4px] text-center font-[400] text-[#181A20] text-[14px]"
+                    : " ml-[3px] max-w-[43px] h-[20px] font-roboto text-roboto leading-[19.42px] tracking-[0.4px] text-center font-[400] text-[#F0B90B] text-[14px]"
+                }`}
+              >
                 {lang ? (
                   <span>Sign Up</span>
                 ) : (

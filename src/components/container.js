@@ -8,9 +8,23 @@ export default function Container() {
   let { lang, setlang, dark, setdark } = useContext(Manage);
   return (
     <div className="relative  ">
-      <div className=" max-w-[1920px] max-h-[1005px] pb-[343px] bg-[#1C2329]  top[-337px] left-[-440px]">
+      <div
+        className={` ${
+          dark
+            ? " max-w-[1920px] max-h-[1005px] pb-[343px] bg-[#F6F6F6] top[-337px] left-[-440px]"
+            : "  max-w-[1920px] max-h-[1005px] pb-[343px] bg-[#1C2329] top[-337px] left-[-440px]"
+        }`}
+      >
         <Header></Header>
-        <div className=" max-w-[948px] max-h[1504px] mx-auto mt-[158px] py-[30px] px-[40px] rounded-[5px] bg-[#FFFFFF]">
+        <div
+          className={`${
+            dark
+              ? " max-w-[948px] max-h[1504px] mx-auto mt-[158px] py-[30px] px-[40px] rounded-[5px] bg-[#FFFFFF]"
+              : " max-w-[948px] max-h[1504px] mx-auto mt-[158px] py-[30px] px-[40px] rounded-[5px] bg-[#1C2329]"
+          }
+            
+          `}
+        >
           <div
             className={`${
               dark
@@ -33,7 +47,7 @@ export default function Container() {
               dark
                 ? "bg-[#FFFFFF] flex items-center flex-col  max-w-[868px] max-h-[1380px] pb-[10px] md:items-center gap-[25px] md:flex-row "
                 : "bg-[#2B3139] flex items-center flex-col  max-w-[868px] max-h-[1380px] pb-[10px] md:items-center gap-[25px] md:flex-row "
-            } `}
+            }  `}
           >
             <SignIn></SignIn>
             <Qr></Qr>

@@ -10,7 +10,13 @@ export default function Qr() {
   let { lang, setlang, dark, setdark } = useContext(Manage);
 
   return (
-    <div className="max-w-[400px] max-h-[370px] py-[20px] px-[50px] rounded-[5px] border-[1.5px]  flex flex-col justify-center gap-[15px] items-center">
+    <div
+      className={`${
+        dark
+          ? " max-w-[400px] max-h-[370px] py-[20px] px-[50px] rounded-[5px] border-[1.5px]  flex flex-col justify-center gap-[15px] items-center"
+          : "max-w-[400px] max-h-[370px] py-[20px] px-[50px] rounded-[5px] border-[1.5px]  flex flex-col justify-center gap-[15px] items-center bg-[#2B3139] border-[#2B3139] shadow-[0_2px_8px_0px] shadow-[ #14141466]"
+      }`}
+    >
       <div className=" flex  justify-center items-center bg-[#E6E8EA] max-w-[179px] h-[179px] rounded-[5px] border-[5px]">
         <Image
           className="w-[95%] h-[95%]  object-fit"
