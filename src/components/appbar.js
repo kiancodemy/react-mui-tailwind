@@ -7,20 +7,26 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
+
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+
 import { useState } from "react";
 import Up from "./svgg/up";
 import Down from "./svgg/down";
-import { SettingsEthernet } from "@mui/icons-material";
 
-const pages = ["Blog", "Aboutus", "Pricing", "Products"];
+import { Manage } from "./context/context";
+import { useContext } from "react";
+
 const settings = ["English", "Farsi"];
 
 export default function ResponsiveAppBar() {
+  const { lang, setlang } = useContext(Manage);
+  const pages = lang
+    ? ["Blog", "Aboutus", "Pricing", "Products"]
+    : ["بلاگ", "درباره ما", "قیمت ها", "محصولات"];
+
   const [direction, setdirection] = useState(false);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
