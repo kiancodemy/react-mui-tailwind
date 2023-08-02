@@ -19,6 +19,9 @@ export default function Qr() {
     >
       <div className=" flex  justify-center items-center bg-[#E6E8EA] max-w-[179px] h-[179px] rounded-[5px] border-[5px]">
         <Image
+          onClick={() => {
+            setdark(!dark);
+          }}
           className="w-[95%] h-[95%]  object-fit"
           alt="qr"
           src={dark ? svg : svg2}

@@ -114,20 +114,20 @@ export default function SignIn() {
             <div className="max-w-[412px] max-h[78px]">
               <Button
                 className=" text-[#1E2329]
-                  bg-[#FCD535] text-center hover:bg-[#e9bd0e] max-w-[412px] max-h-[43px]"
+                  bg-[#FCD535] py-[10px] px-[24px]  text-center hover:bg-[#e9bd0e] max-w-[412px] max-h-[43px]"
                 type="submit"
                 fullWidth
                 sx={{ mt: 3, mb: 2 }}
               >
                 {lang ? (
-                  <p className="py-[10px] px-[24px] ">Log In:</p>
+                  <p className="capitalize font-roboto font-[700] ">Log In</p>
                 ) : (
-                  <p className="py-[10px] px-[24px] font-iran">وارد شوید</p>
+                  <p className=" font-[700] font-iran">ورود</p>
                 )}
               </Button>
 
               <Link
-                className=" tracking-[0.4px] leading-[19.42px] no-underline font-[400] font-robot  max-h-[20px] text-[12px] text-[#1E2329]"
+                className=" tracking-[0.4px] leading-[19.42px] no-underline font-[400] font-roboto  max-h-[20px] text-[12px] text-[#1E2329]"
                 href="#"
                 variant="body2"
               >
@@ -192,7 +192,7 @@ export default function SignIn() {
             </Button>
 
             <Link
-              className="max-w-[182px] h-[20px] no-underline text-[#707A84]"
+              className=" max-w-[182px] h-[30px] no-underline text-[#707A84]"
               href="#"
               variant="body2"
             >
@@ -210,8 +210,8 @@ export default function SignIn() {
                 <span
                   className={`${
                     dark
-                      ? "block font-iran text-right"
-                      : "block font-iran text-right text-[#B7BDC6]"
+                      ? "  font-iran text-right"
+                      : "  right-0  font-iran text-right text-[#B7BDC6]"
                   }`}
                 >
                   حساب از قبل ندارید؟
@@ -228,7 +228,7 @@ export default function SignIn() {
                 {lang ? (
                   <span>Sign Up</span>
                 ) : (
-                  <span className="font-iran block text-right">ثبت نام</span>
+                  <span className=" text-right  font-iran ">ثبت نام</span>
                 )}
               </span>
             </Link>

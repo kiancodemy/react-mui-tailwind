@@ -83,8 +83,10 @@ export default function ResponsiveAppBshar() {
               <div className="max-w-[138px] h-[37px] flex justify-start items-center ">
                 <Typography
                   className={`${
-                    dark ? "text-[#393F49" : "text-[#EAECEF]"
-                  }"max-w[125px] leading-[20px] tracking-[-0.5px] h-[30px] text-[18px]"`}
+                    dark
+                      ? "text-[#393F49] max-w[125px] leading-[20px] tracking-[-0.5px] h-[30px] text-[18px]"
+                      : "text-[#EAECEF] max-w[125px] leading-[20px] tracking-[-0.5px] h-[30px] text-[18px]"
+                  }`}
                   variant="h6"
                   noWrap
                   component="a"
