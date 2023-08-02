@@ -14,7 +14,7 @@ export default function Container() {
         className={` ${
           dark
             ? " max-w-[1920px] max-h-[1005px] pb-[343px] bg-[#F6F6F6] top[-337px] left-[-440px]"
-            : "  max-w-[1920px] max-h-[1005px] pb-[343px] bg-[#1C2329] top[-337px] left-[-440px]"
+            : " max-w-[1920px] max-h-[1005px] pb-[343px] bg-[#1C2329] top[-337px] left-[-440px]"
         }`}
       >
         <Header></Header>

@@ -155,7 +155,7 @@ export default function SignIn() {
             <Button
               className={`${
                 dark
-                  ? "font-roboto text-[14px] font-[500] text-center tracking-[0.1px] bg-[#CEE6F3] hover:bg-[#9fd1ec] leading-[23px] text-[black] max-w-[480px] max-h-[40px]"
+                  ? "font-roboto text-[14px] font-[500] text-center tracking-[0.1px] bg-[#E6E8EA] hover:bg-[#E6E8EA] leading-[23px] text-[black] max-w-[480px] max-h-[40px]"
                   : "font-roboto text-[14px] font-[500] text-center tracking-[0.1px] bg-[#1E2329]  leading-[23px] text-[#96999C] max-w-[480px] max-h-[40px]"
               } `}
               type="submit"

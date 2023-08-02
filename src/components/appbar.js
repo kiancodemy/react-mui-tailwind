@@ -74,7 +74,7 @@ export default function ResponsiveAppBshar() {
   return (
     <AppBar
       position="static"
-      className={`${dark ? "bg-[#FFFFFF]" : "bg-[#1C2329]"}`}
+      className={`${dark ? " bg-[#FFFFFF]" : "bg-[#1C2329]"}`}
     >
       <Container maxWidth="xl ">
         <Toolbar disableGutters className="max-w-[1860px] max-h-[37px] ">
