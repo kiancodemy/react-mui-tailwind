@@ -34,7 +34,15 @@ export default function Container() {
                 : "max-w-[868px] max-h-[42px] pb-[10px] bg-[#2B3139]"
             }`}
           >
-            <p></p>
+            <p>
+              <Switch
+                onClick={() => {
+                  setdark(!dark);
+                }}
+                className="md:ml-[25px]  ml-[110px]"
+                {...label}
+              />
+            </p>
             <p
               className={`${
                 dark
